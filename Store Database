@@ -1,0 +1,22 @@
+# SQL 
+CREATE TABLE Books (id INTEGER PRIMARY KEY, Genre TEXT, Name TEXT, Price INTEGER, Rating INTEGER);
+
+INSERT into Books Values (1, "romance", "Haunting Adeline", 11, 5.0); 
+INSERT into Books Values (2, "Mafia romance", "Dante", 13, 4.0); 
+INSERT into Books Values (3, "Thriller", "Verity", 20, 4.9);
+INSERT into Books Values (4, "Mafia romance", "Stolen Touches", 10, 5.0); 
+INSERT into Books Values (5, "Horror", "The Haunting", 15, 3.0); 
+INSERT into Books Values (6, "romance", "Acher's Voice", 14, 5.0); 
+INSERT into Books Values (7, "Fantacy romance", "Choosing Theo", 12, 5.0); 
+INSERT into Books Values (8, "Mafia romance", "Nero", 17, 4.9); 
+INSERT into Books Values (9, "Fantacy romance", "ACOTAR", 13, 4.7); 
+INSERT into Books Values (10, "Mafia romance", "Joey", 11, 4.5); 
+INSERT into Books Values (11, "romance", "Say You Swear", 16, 4.7); 
+INSERT into Books Values (12, "Hockey romance", "Icebreaker", 10, 3.0); 
+INSERT into Books Values (13, "Hockey romance", "The Deal", 11, 4.9); 
+INSERT into Books Values (14, "romance", "The Wrong Bride", 12, 5.0); 
+INSERT into Books Values (15, "romance", "Between Commitment and Betrayal", 10, 4.9); 
+
+SELECT * FROM Books ORDER BY rating;
+SELECT SUM(Price) FROM books
+ first I created a book store database, then added all the books prices.
