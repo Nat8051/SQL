@@ -1,0 +1,29 @@
+# 1. Show only customers in USA 
+
+SELECT * FROM chinook.customers
+WHERE Country != "USA"; 
+
+2. Find the Invoices of customers who are from USA. The resulting table should show the customer's 
+full name, Invoice ID, Date of the invoice, and billing country.
+
+SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.BillingCountry, inv.InvoiceDate
+FROM chinook.invoices AS inv 
+LEFT JOIN chinook.customers AS cust 
+on inv.CustomerId = cust.CustomerId 
+WHERE inv.BillingCountry = "USA";
+
+3. What are the total sales for 2009?
+SELECT SUM(Total)
+FROM chinook.Invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+4. Show the total sales made by each sales agent.
+SELECT emp.FirstName, emp.LastName,
+ROUND(SUM(Inv.Total), 2) AS 'Total Sales' 
+FROM chinook.Employees emp
+JOIN chinook.Customers cust 
+ON cust.SupportRepId = emp.EmployeeId
+JOIN chinook.Invoices Inv 
+ON Inv.CustomerId = cust.CustomerId
+WHERE emp.Title = 'Sales Support Agent' 
+GROUP BY emp.FirstName;
